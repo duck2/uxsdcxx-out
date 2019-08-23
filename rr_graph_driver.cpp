@@ -1,4 +1,6 @@
 #include <fstream>
+#include <iostream>
+#include <limits>
 #include "rr_graph_uxsdcxx.h"
 
 int main(int argc, char **argv){
@@ -10,5 +12,6 @@ int main(int argc, char **argv){
 		std::cout << "PugiXML parse failure\n";
 		return 0;
 	}
+	std::cout.precision(std::numeric_limits<float>::max_digits10);
 	rr_graph.write(std::cout);
 }
